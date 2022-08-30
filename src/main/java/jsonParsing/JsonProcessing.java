@@ -6,6 +6,7 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -65,6 +66,9 @@ public class JsonProcessing {
             String jsonInString = gsonForWriting.toJson(p);
             System.out.println();
             System.out.println("Write the object to the json file: ");
+            //PrintWriter pw = new PrintWriter("output.json");
+            //pw.println(jsonInString);
+            //pw.flush();
             System.out.println(jsonInString);
         } catch (IOException e) {
             System.out.println("Could not read the file: " + e);
@@ -81,10 +85,14 @@ public class JsonProcessing {
     public static void parsePeopleArray(String filePath) {
         Gson gson = new Gson();
 
-        try {
-            String fileData = new String(Files.readAllBytes(Paths.get(filePath)));
+        try (FileReader br = new FileReader(filePath)) {
             JsonParser parser = new JsonParser();
-            JsonObject jo = (JsonObject) parser.parse(fileData);
+            JsonObject jo = (JsonObject) parser.parse(br);
+
+            // Alternatively, we could have done:
+            // String fileData = new String(Files.readAllBytes(Paths.get(filePath)));
+            // JsonObject jo = (JsonObject) parser.parse(fileData);
+
             JsonArray jsonArr = jo.getAsJsonArray("people");
 
             // The commented code is if we want to use an ArrayList instead of array of Person-s
