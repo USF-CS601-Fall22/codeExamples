@@ -1,0 +1,37 @@
+{
+  "people": [
+    {
+      "name": "Joe Lee",
+      "id": 1,
+      "title": "Tester",
+      "address": {
+        "state": "CA",
+        "city": "San Francisco",
+        "street": "Geary",
+        "number": 45
+      }
+    },
+    {
+      "name": "Alexandra Pearson",
+      "id": 2,
+      "title": "Developer",
+      "address": {
+        "state": "CA",
+        "city": "San Francisco",
+        "street": "Hopkins",
+        "number": 3
+      }
+    },
+    {
+      "name": "Helen Smith",
+      "id": 3,
+      "title": "HR",
+      "address": {
+        "state": "CA",
+        "city": "San Bruno",
+        "street": "MLK",
+        "number": 15
+      }
+    }
+  ]
+}

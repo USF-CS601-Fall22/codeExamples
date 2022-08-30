@@ -1,0 +1,20 @@
+{
+  "@type": "hotelResult",
+  "i": "0",
+  "f": "Parc 55 San Francisco - A Hilton Hotel",
+  "d": "Parc 55 <B>San</B> <B>Francisco</B> - A Hilton Hotel",
+  "id": "12539",
+  "t": "HOTEL",
+  "ll": {
+    "lat": "37.784580",
+    "lng": "-122.408540"
+  },
+  "a": "QSF",
+  "amc": "178305",
+  "ad": "55 Cyril Magnin St",
+  "ci": "San Francisco",
+  "pr": "CA",
+  "c": "USA",
+  "cc": "US",
+  "ccc": "USA"
+}
