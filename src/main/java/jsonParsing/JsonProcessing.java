@@ -17,7 +17,7 @@ import java.util.List;
 /** The example demonstrates reading from a JSON file */
 public class JsonProcessing {
     public static void main(String[] args) {
-        // parseFruitFile("input/fruit.json");
+        //parseFruitFile("input/fruit.json");
         // parsePersonInfo("input/personInfo.json");
         parsePeopleArray("input/people.json");
     }
@@ -52,9 +52,10 @@ public class JsonProcessing {
      * @param filePath path to the json file
      */
     public static void parsePersonInfo(String filePath) {
+        Gson gson = new Gson();
+
         try (FileReader br = new FileReader(filePath)) {
             // Parse the json file into a Person object
-            Gson gson = new Gson();
             Person p = gson.fromJson(br, Person.class);
             System.out.println("Created the following object from exJsonPersonInfo.json file:");
             System.out.println();
@@ -95,6 +96,7 @@ public class JsonProcessing {
 
             JsonArray jsonArr = jo.getAsJsonArray("people");
 
+
             // The commented code is if we want to use an ArrayList instead of array of Person-s
             //Type peopleType = new TypeToken<ArrayList<Person>>(){}.getType();
             //ArrayList<Person> people = gson.fromJson(jsonArr, peopleType);
@@ -115,5 +117,6 @@ public class JsonProcessing {
     public static void parseHotelFile(String filePath) {
         // FILL IN CODE: parse hotel.json that contains info about one hotel
         // Store the data in an object of class Hotel
+
     }
 }

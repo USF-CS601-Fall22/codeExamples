@@ -16,7 +16,7 @@ public class FileProcessingExample {
     }
 
     public static void main(String[] args) {
-        processFiles("src/main/java/lecture27FileProcessing");
+        processFiles("src/main/java/dataStructures");
     }
 
     }

@@ -19,7 +19,7 @@ public class DirectoryStreamExample {
         try (DirectoryStream<Path> pathsInDir = Files.newDirectoryStream(p)) {
             for (Path path : pathsInDir) {
                 // print the name of each file in the directory
-                if (!Files.isDirectory(path) && (path.toString().endsWith(".java")))
+                //if (!Files.isDirectory(path) && (path.toString().endsWith(".java")))
                     System.out.println(path);
 
             }
@@ -33,7 +33,9 @@ public class DirectoryStreamExample {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-        DirectoryStreamExample.processFiles("src/main/java/dataStructures");
+        //Path path = Paths.get("src/main/java", "dataStructures");
+
+        DirectoryStreamExample.processFiles("src/main/java");
 
     }
 }

@@ -8,7 +8,7 @@ public class Fruit {
     private String color;
     private double price;
 
-    @SerializedName(value = "organic")
+    //@SerializedName(value = "organic")
     private boolean isOrganic; // if we want to have a name of the field that is
     // different from the ones in a json file
 
