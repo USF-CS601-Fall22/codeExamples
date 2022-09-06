@@ -64,6 +64,6 @@ public class Question implements Complexity
    //-----------------------------------------------------------------
    public String toString()
    {
-      return question + "\n" + answer;
+      return question + System.lineSeparator() + answer;
    }
 }

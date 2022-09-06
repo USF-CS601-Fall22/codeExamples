@@ -7,6 +7,16 @@ public class Creature implements Speak {
     public void say(String greeting) {
         System.out.println(greeting);
     }
+
+    @Override
+    public void shout() {
+        System.out.println("Yell!!!");
+    }
+
+    @Override
+    public String toString() {
+        return "ok";
+    }
  
 }
  
