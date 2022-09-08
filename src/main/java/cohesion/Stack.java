@@ -10,6 +10,7 @@ public class Stack {
         data = new Object[MAX_SIZE];
         top = 0;
     }
+
     public void push(Object elem) {
         if (top == MAX_SIZE)
             throw new IllegalStateException();

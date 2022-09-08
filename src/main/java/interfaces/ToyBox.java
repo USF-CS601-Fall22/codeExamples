@@ -1,6 +1,5 @@
 package interfaces;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class ToyBox implements Iterable<String> {

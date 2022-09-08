@@ -1,5 +1,7 @@
 package interfaces;
 
+import org.w3c.dom.css.Rect;
+
 import java.util.*;
 
 public class RectangleTest {
@@ -16,6 +18,11 @@ public class RectangleTest {
 
         Collections.sort(list, comp2);
         System.out.println(list);
+
+        TreeSet<Rectangle> setR = new TreeSet<>(comp1);
+        setR.add(r1);
+        setR.add(r2);
+        System.out.println(setR);
 
 
     }
