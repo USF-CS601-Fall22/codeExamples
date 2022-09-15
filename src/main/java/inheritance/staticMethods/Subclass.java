@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.staticMethods;
 
 /** The example demonstrates that static methods do hot behave polymorphically. */
 public class Subclass  extends Superclass {
