@@ -15,8 +15,8 @@ public class BeverageTest {
 				+ " $" + beverage1.cost());
 		
 		Beverage beverage2 = new Decaf();
-		beverage2 = new BeverageWithMilk(beverage2);
-		beverage2 = new BeverageWithWhippedCream(beverage2);
+		beverage2 = new BeverageWithWhippedCream(new BeverageWithMilk(beverage2));
+		//beverage2 = new BeverageWithWhippedCream(beverage2);
 		System.out.println(beverage2.getDescription() 
 				+ " $" + beverage2.cost());
 

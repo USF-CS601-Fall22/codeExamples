@@ -6,17 +6,16 @@ package designPatterns.decorator.decoratorBeveragesExample;
  *
  */
 public class BeverageWithSoyMilk extends CondimentDecorator {
-	private Beverage beverage;
 
 	public BeverageWithSoyMilk(Beverage beverage) {
-		this.beverage = beverage;
+		super(beverage);
 	}
 
 	public String getDescription() {
-		return beverage.getDescription() + ", Soy";
+		return getBeverage().getDescription() + ", Soy";
 	}
 
 	public double cost() {
-		return .15 + beverage.cost();
+		return .15 + getBeverage().cost();
 	}
 }

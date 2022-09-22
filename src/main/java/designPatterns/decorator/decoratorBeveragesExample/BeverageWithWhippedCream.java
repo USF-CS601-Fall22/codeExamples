@@ -5,17 +5,16 @@ package designPatterns.decorator.decoratorBeveragesExample;
  *
  */
 public class BeverageWithWhippedCream extends CondimentDecorator {
-	Beverage beverage;
- 
+
 	public BeverageWithWhippedCream(Beverage beverage) {
-		this.beverage = beverage;
+		super(beverage);
 	}
  
 	public String getDescription() {
-		return beverage.getDescription() + ", Whipped cream";
+		return getBeverage().getDescription() + ", Whipped cream";
 	}
  
 	public double cost() {
-		return .10 + beverage.cost();
+		return .10 + getBeverage().cost();
 	}
 }
