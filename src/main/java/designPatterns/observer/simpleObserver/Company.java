@@ -5,9 +5,11 @@ import java.util.List;
 
 public class Company implements Subject {
     private List<Observer> observerList;
+    private List<String> internships;
 
     public Company() {
         observerList = new ArrayList<>();
+        internships = new ArrayList<>();
     }
 
     @Override
@@ -19,6 +21,11 @@ public class Company implements Subject {
     public void removeObserver(Observer observer) {
         int indexOf = observerList.indexOf(observer);
         observerList.remove(indexOf);
+    }
+
+    public void addInternship(String jobDescription) {
+        internships.add(jobDescription);
+        notifyObservers();
     }
 
     @Override
