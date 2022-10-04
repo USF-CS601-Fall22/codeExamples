@@ -32,7 +32,7 @@ public class NoSynchronization {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		for (int i = 0; i< 1000; i++) {
+		for (int i = 0; i < 1000; i++) {
 			NoSynchronization ns = new NoSynchronization();
 			ns.createThreads();
 		}

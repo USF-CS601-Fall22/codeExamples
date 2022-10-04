@@ -45,14 +45,14 @@ public class WithSynchronization {
     public static void main(String[] args)  {
         WithSynchronization ns = new WithSynchronization();
         try {
-            //for (int i = 0; i < 10000; i++) {
-            ns.createThreads();
-            //}
+            for (int i = 0; i < 10000; i++) {
+                ns.createThreads();
+            }
         }
         catch  (InterruptedException e) {
             System.out.println("Thread got interrupted: " + e);
         }
-        //System.out.println("Done");
+        System.out.println("Done");
     }
 
 }

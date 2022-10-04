@@ -60,8 +60,5 @@ public class CalculatePrimes extends Thread {
 		}
 
 		calculator.finished = true;
-		//calculator.finished1++;
-		// some delay
-		//calculator.finished1 = calculator.finished2;
 	}
 }
