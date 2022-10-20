@@ -8,7 +8,7 @@ import java.io.*;
 public class MultithreadedServer {
 
         public static final String EOT = "EOT";
-        public static final String EXIT = "SHUTDOWN";
+        public static final String SHUTDOWN = "SHUTDOWN";
         public static final int PORT = 8000;
         private volatile boolean isShutdown = false;
 
@@ -59,16 +59,12 @@ public class MultithreadedServer {
                     String input;
                     while (!connectionSocket.isClosed()) {
                         input = reader.readLine();
-                        // create HttpRequest that parses input
-                        // create a handler
-                        // handler.setAttribute(threadSafeHdata);
-                        // handler.processRequest(httpRequest, printWriter)
                         System.out.println("Server received: " + input); // echo the same string to the console
 
                         if (input.equals(EOT)) {
                             System.out.println("Server: Closing socket.");
                             connectionSocket.close();
-                        } else if (input.equals(EXIT)) {
+                        } else if (input.equals(SHUTDOWN)) {
                             isShutdown = true;
                             System.out.println("Server: Shutting down.");
                             connectionSocket.close();
@@ -89,7 +85,6 @@ public class MultithreadedServer {
 
 
                 }
-
 
             }
         }

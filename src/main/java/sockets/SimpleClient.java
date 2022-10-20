@@ -1,6 +1,7 @@
 package sockets;
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 /**
  * SimpleClient: Reads input from the keyboard and sends it to the server via
@@ -20,15 +21,17 @@ public class SimpleClient extends Thread {
 
 			// For reading user keyboard input from the console
 			// (has nothing to do with sockets!)
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			//BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			Scanner sc  = new Scanner(System.in);
 
 			// For writing to the socket (so that the server could get client messages)
 			PrintWriter writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
 
 			String input = new String();
 			while (!socket.isClosed()) {
-				input = reader.readLine(); // read what the user typed in the
+				//input = reader.readLine(); // read what the user typed in the
 											// console
+				input = sc.nextLine();
 
 				writer.println(input); // send the message to the server via the
 										// socket
@@ -37,13 +40,13 @@ public class SimpleClient extends Thread {
 				if (input.equals(SimpleServer.EOT)) {
 					System.out.println("Client: Ending client.");
 					socket.close();
-				} else if (input.equals(SimpleServer.EXIT)) {
+				} else if (input.equals(SimpleServer.SHUTDOWN)) {
 					System.out.println("Client: Shutting down server.");
 					socket.close();
 				}
 			}
 
-			reader.close();
+			//reader.close();
 			writer.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();

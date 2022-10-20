@@ -20,7 +20,7 @@ public class DateClient {
 	 */
 	public static void main(String[] args) throws IOException {
 		String serverAddress = JOptionPane
-				.showInputDialog("Enter IP Address of a machine that is\n" + "running the date service on port 9090:");
+				.showInputDialog("Enter IP Address of a machine that is" + System.lineSeparator() + "running the date service on port 9090:");
 		Socket s = new Socket(serverAddress, 9091);
 		BufferedReader input = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		String answer = input.readLine();

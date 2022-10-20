@@ -40,10 +40,8 @@ public class ReverseEchoServer {
 	public final static int PORT = 5534;
 	
 	public static void main(String[] args) throws IOException {
-		ServerSocket welcomingSocket = null;
 		Socket connectionSocket = null;
-		try {
-			welcomingSocket = new ServerSocket(ReverseEchoServer.PORT);
+		try (ServerSocket welcomingSocket = new ServerSocket(ReverseEchoServer.PORT)) {
 			System.out.println("Server started: waiting for connections on port " + ReverseEchoServer.PORT);
 			connectionSocket = welcomingSocket.accept();
 			System.out.println("EchoServer: EchoClient connected.");
@@ -62,9 +60,8 @@ public class ReverseEchoServer {
 			System.out.println(e.getMessage());
 		}
 		finally {
+			// welcoming socket will be closed automatically since we are using try with resources
 			System.out.println("Bye!");
-			if (welcomingSocket != null)
-				welcomingSocket.close();
 			if (connectionSocket != null)
 				connectionSocket.close();
 		}
