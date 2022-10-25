@@ -17,8 +17,6 @@ import javax.net.ssl.SSLSocketFactory;
  */
 public class WebClientSSL {
 
-
-
     /**
      * Creates a secure socket to communicate with googleapi's server that
      * provides API about books , sends a GET request, and gets a response as a
@@ -31,8 +29,7 @@ public class WebClientSSL {
 
 
         String urlString = "https://www.googleapis.com/books/v1/volumes?q=isbn:9787508318134";
-
-        //String urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=University%20of%20San%20Francisco,%20US";
+        // String urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=University%20of%20San%20Francisco,%20US";
         // To get this one to work, you need to append and API key.
 
         PrintWriter out = null;
@@ -51,7 +48,7 @@ public class WebClientSSL {
             String request = getRequest(url.getHost(), url.getPath() + "?"+ url.getQuery());
             System.out.println("Request: " + request);
 
-            out.println(request); // send a request to the server
+            out.println(request); // send the request to the server
             out.flush();
 
             // input stream for the secure socket.

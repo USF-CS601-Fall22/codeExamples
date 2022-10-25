@@ -25,7 +25,7 @@ public class SimpleClient extends Thread {
 			Scanner sc  = new Scanner(System.in);
 
 			// For writing to the socket (so that the server could get client messages)
-			PrintWriter writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+			PrintWriter writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
 
 			String input = new String();
 			while (!socket.isClosed()) {
@@ -35,8 +35,6 @@ public class SimpleClient extends Thread {
 
 				writer.println(input); // send the message to the server via the
 										// socket
-				writer.flush();
-
 				if (input.equals(SimpleServer.EOT)) {
 					System.out.println("Client: Ending client.");
 					socket.close();

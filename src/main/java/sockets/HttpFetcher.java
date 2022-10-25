@@ -36,6 +36,7 @@ public class HttpFetcher {
             // create and send request
             String request = getRequest(host, pathAndResource);
             System.out.println("Request = " + request);
+
             out.write(request.getBytes()); // send HTTP request to the server
             out.flush();
 
