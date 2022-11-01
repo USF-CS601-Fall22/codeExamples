@@ -72,7 +72,7 @@ public class MessageServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String message = request.getParameter("message");
 
-		username = username == null ? "anonymous" : username;
+		username = (username == null || username.equals(""))  ? "anonymous" : username;
 		message = message == null ? "" : message;
 
 		// Avoid XSS attacks using Apache Commons StringUtils

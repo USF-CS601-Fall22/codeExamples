@@ -43,7 +43,7 @@ public class HtmlFormServlet extends HttpServlet {
 		response.setStatus(HttpServletResponse.SC_OK);
 
 		String nameParam = request.getParameter("name");
-		if (nameParam.equals("") || nameParam == null)
+		if (nameParam == null || nameParam.equals(""))
 			nameParam = "anonymous";
 		nameParam = StringEscapeUtils.escapeHtml4(nameParam);
 

@@ -33,7 +33,7 @@ public class HelloServlet extends HttpServlet {
 			name = "anonymous";
 
 		//System.out.println(name);
-		//name = StringEscapeUtils.escapeHtml4(name); // need to "clean up" whatever
+		name = StringEscapeUtils.escapeHtml4(name); // need to "clean up" whatever
 													// the user entered
 		//System.out.println(name);
 		// writing to the response

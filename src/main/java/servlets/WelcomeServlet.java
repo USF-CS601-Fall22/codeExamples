@@ -30,8 +30,9 @@ public class WelcomeServlet extends HttpServlet {
 		out.printf("<body>%n");
 		
 		// Displays Hello and the name of the person
-		out.printf("<h1>Hello, %s!</h1>%n%n", name);
-		
+		//out.printf("<h1>Hello, %s!</h1>%n%n", name);
+		out.println("<h1>Hello, " + name + "</h1>" );
+
 		out.printf("%n</body>%n");
 		out.printf("</html>%n");
 
