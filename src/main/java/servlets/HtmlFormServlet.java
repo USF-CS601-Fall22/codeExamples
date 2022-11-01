@@ -43,11 +43,11 @@ public class HtmlFormServlet extends HttpServlet {
 		response.setStatus(HttpServletResponse.SC_OK);
 
 		String nameParam = request.getParameter("name");
-		if (nameParam == null)
+		if (nameParam.equals("") || nameParam == null)
 			nameParam = "anonymous";
 		nameParam = StringEscapeUtils.escapeHtml4(nameParam);
 
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 
 		// Redirect to another url, send name in the get request
 		// Going to this url will invoke a welcome servlet
