@@ -1,4 +1,4 @@
-package servlets.sessions.dictionary;
+package servlets.dictionary;
 
 import java.util.HashMap;
 import java.util.Map;

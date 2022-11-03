@@ -1,8 +1,7 @@
-package servlets.sessions.dictionary;
+package servlets.dictionary;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
-import servlets.sessions.SessionServlet;
 
 public class DictionaryServer {
     public final static int PORT = 8080;
@@ -16,7 +15,7 @@ public class DictionaryServer {
 
         Server server = new Server(PORT);
 
-        ServletContextHandler servhandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        ServletContextHandler servhandler = new ServletContextHandler();
         servhandler.addServlet(DictionaryServlet.class, "/translate");
         server.setHandler(servhandler);
         servhandler.setAttribute("dictionary", englishToSpanishDictionary);
