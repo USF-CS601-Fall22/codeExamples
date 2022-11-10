@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src = "popWindow.js"></script>
+ <title>Hotel Info</title>
+</head>
+
+<body>
+
+#if($name != "anonymous")
+<h5>Hello, $name! </h5>
+#end
+
+<p>Recommended Hotels: </p>
+#foreach( $hotel in $hotels)
+ $hotel<br>
+#end
+
+<resource name="style1.css" type="download" location="style1.css">
+</resource>
+
+</body>
+</html>
