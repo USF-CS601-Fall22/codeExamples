@@ -57,8 +57,8 @@ public class SimpleJDBCExample {
 			Properties config = loadConfig("database.properties");
 
 			// Create database URI in proper format
-			String uri = "jdbc:mysql://localhost:3307/" + config.getProperty("username") + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-			//System.out.println("uri = " + uri);
+			String uri = "jdbc:mysql://"+ config.getProperty("hostname") + "/" + config.getProperty("username") + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+			System.out.println("uri = " + uri);
 
 			PreparedStatement sql; // prepared statement
 			try (Connection dbConnection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
