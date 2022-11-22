@@ -47,11 +47,11 @@ public class RegistrationServlet extends HttpServlet {
 		DatabaseHandler dbHandler = DatabaseHandler.getInstance();
 		dbHandler.registerUser(usernameParam, password);
 
+
 		response.getWriter().println("Successfully registered the user " + usernameParam);
 	}
 
 	private static void printForm(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
 		PrintWriter out = response.getWriter();
 
 		out.printf("<form method=\"post\" action=\"%s\">%n", request.getServletPath());

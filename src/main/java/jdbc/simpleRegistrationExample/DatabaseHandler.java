@@ -144,7 +144,8 @@ public class DatabaseHandler {
         dhandler.createTable();
         System.out.println("created a user table ");
         dhandler.registerUser("luke", "lukeS1k23w");
-        System.out.println("Registered luke.");
+        dhandler.registerUser("alex", "cat123");
+        System.out.println("Registered alex.");
     }
 
 

@@ -10,7 +10,7 @@ public class MyServer {
 
 	public static void main(String[] args) throws Exception {
 		DatabaseHandler dhandler = DatabaseHandler.getInstance();
-		dhandler.createTable();
+		//dhandler.createTable();
 
 		Server server = new Server(PORT);
 		ServletHandler handler = new ServletHandler();
