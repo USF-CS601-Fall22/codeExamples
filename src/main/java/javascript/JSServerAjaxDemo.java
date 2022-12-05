@@ -23,14 +23,15 @@ public class JSServerAjaxDemo {
 		// for the ajaxDBDemo example
 		servhandler.addServlet(AccessDatabaseServlet.class, "/students");
 
+		// for fetchBooks example
+		servhandler.addServlet(BookServlet.class, "/books");
 
-		ResourceHandler resource_handler = new ResourceHandler(); // a handler for serving static pages
-		resource_handler.setDirectoriesListed(true);
-
-		resource_handler.setResourceBase("static");
+		ResourceHandler resourceHandler = new ResourceHandler(); // a handler for serving static pages
+		resourceHandler.setDirectoriesListed(true);
+		resourceHandler.setResourceBase("static");
 
 		HandlerList handlers = new HandlerList();
-		handlers.setHandlers(new Handler[] { resource_handler, servhandler });
+		handlers.setHandlers(new Handler[] { resourceHandler, servhandler });
 		server.setHandler(handlers);
 
 		try {
